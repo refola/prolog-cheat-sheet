@@ -19,6 +19,16 @@ Source: [https://github.com/araneforseti/prolog-koans](https://github.com/aranef
 		pred1(X),
 		pred2(X, Y).
 
+## Equality-like comparisons (`=`, etc)
+
+	X is Y  % X is the value that results from simplifying the Y as an arithmetic expression. Attempts unification of variable X to the value of Y.
+	X =:= Y % X and Y evaluate to the same arithmetic value. No unification.
+	X #= Y  % X and Y are equal as arithmetic integer expressions. Attempts bidirectional unification of all variables in each expression. (load with use_module(library(clpfd)).)
+	X = Y   % Can X and Y be unified into the same value? If so, unify them.
+    X \= Y  % Would unifying X and Y fail?
+	X == Y  % Are X and Y already the same value?
+    X \== Y % Are X and Y different?
+
 ## Lists (`[]`)
 
 	checkFirstAndRest([First|Rest) :-
